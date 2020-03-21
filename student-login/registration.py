@@ -71,4 +71,3 @@ def login(id, s_list):
 
 
 main()
-print("finished")
