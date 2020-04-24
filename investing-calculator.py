@@ -101,7 +101,17 @@ def inflation_adjusted_roi():
 
 
 def calculate_gains_losses():
-    pass
+    market_price = input('Enter the current market price for your investment: ')
+    market_price = error_check_accounting(market_price)
+    purchase_price = input('Enter the price you purchased your investment for: ')
+    purchase_price = error_check_accounting(purchase_price)
+    percentage_increase_or_decrease = (market_price - purchase_price) / purchase_price
+    if percentage_increase_or_decrease > 0:
+        print('You have a gain of: ', str('{:.1%}'.format(percentage_increase_or_decrease)) + '%')
+    elif percentage_increase_or_decrease < 0:
+        print('You have a loss of: ', str('{:.1%}'.format(percentage_increase_or_decrease)) + '%')
+    elif percentage_increase_or_decrease == 0:
+        print('You have neither a gain, nor a loss: ', str('{:.1%}'.format(percentage_increase_or_decrease)) + '%')
 
 
 def how_long_to_double_money():
