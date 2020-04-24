@@ -57,8 +57,14 @@ def total_return():
 
 
 def simple_return():
-    pass
-
+    net_proceeds = input('Enter the net proceeds of your investment: ')
+    net_proceeds = error_check_accounting(net_proceeds)
+    dividends = input('Enter the dividends from your investment: ')
+    dividends = error_check_accounting(dividends)
+    cost_basis = input('Enter your cost basis: ')
+    cost_basis = error_check_accounting(cost_basis)
+    result = (net_proceeds + dividends) / cost_basis - 1
+    print('The simple return on your investment is', str('{:.1%}'.format(result)))
 
 def compound_annual_growth():
     pass
