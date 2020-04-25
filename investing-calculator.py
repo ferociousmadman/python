@@ -67,7 +67,14 @@ def simple_return():
     print('The simple return on your investment is', str('{:.1%}'.format(result)))
 
 def compound_annual_growth():
-    pass
+    period_length = input('Enter the length of the period (length of time you have held the investment in years (only enter full years not partial ones for this total): ')
+    period_length = error_check_accounting(period_length)
+    value_of_investment_end_period = input('Enter value of your investment at the end of the period: ')
+    value_of_investment_end_period = error_check_accounting(value_of_investment_end_period)
+    value_of_investment_beginning_period = input('Enter value of your investment at the beginning of the period: ')
+    value_of_investment_beginning_period = error_check_accounting(value_of_investment_beginning_period)
+    result = ((value_of_investment_end_period / value_of_investment_beginning_period) ** (1 / period_length)) - 1
+    print('The compound annual growth rate for your investment is:', str('{:.1%}'.format(result)))
 
 
 def company_earnings_yield():
