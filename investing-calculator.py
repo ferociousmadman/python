@@ -54,6 +54,7 @@ def total_return():
     dividends = error_check_accounting(dividends)
     result = ((value_of_investment_end_of_year - value_of_investment_start_of_year) + dividends) / value_of_investment_start_of_year
     print('You have received a ' + '{:.1%}'.format(result) + ' percent return on your investment.')
+    return result
 
 
 def simple_return():
@@ -110,7 +111,12 @@ def personal_leverage_ratio():
 
 
 def inflation_adjusted_roi():
-    pass
+    non_inflation_return = total_return()
+    inflation_rate = input('Enter the rate of inflation for the period (non-decimal format): ')
+    inflation_rate = error_check_accounting(inflation_rate)
+    inflation_rate = float(inflation_rate) * .01
+    inflation_adjusted_return = (1 + non_inflation_return) / (1 + inflation_rate) - 1
+    print('Your inflation adjusted return on your investment for the given period was:', '{:.1%}'.format(inflation_adjusted_return))
 
 
 def calculate_gains_losses():
