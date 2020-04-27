@@ -128,7 +128,11 @@ def calculate_gains_losses():
 
 
 def how_long_to_double_money():
-    pass
+    annual_interest_rate_of_investment = input('Enter the annual interest rate of the investment: ')
+    annual_interest_rate_of_investment = error_check_accounting(annual_interest_rate_of_investment)
+    result = 72 / annual_interest_rate_of_investment
+    print('At the current annual rate of interest, it will take you', result, 'years to double your investment')
+    print('NOTE: For rates of return that are higher than 20%, this formula is decreasingly accurate.')
 
 
 def error_check(usr_input):
