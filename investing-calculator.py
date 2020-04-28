@@ -79,7 +79,12 @@ def compound_annual_growth():
 
 
 def company_earnings_yield():
-    pass
+    annual_earnings_per_share = input('Enter annual earnings per share: ')
+    annual_earnings_per_share = error_check_accounting(annual_earnings_per_share)
+    stock_price = input('Enter current stock price: ')
+    stock_price = error_check_accounting(stock_price)
+    result = annual_earnings_per_share / stock_price
+    print(str('{:.1%}'.format(result)))
 
 
 def company_return_on_capital():
