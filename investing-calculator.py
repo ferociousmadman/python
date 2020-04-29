@@ -88,7 +88,16 @@ def company_earnings_yield():
 
 
 def company_return_on_capital():
-    pass
+    net_company_income = input('Enter company income for the period: ')
+    net_company_income = error_check_accounting(net_company_income)
+    total_dividends_paid = input('Enter total dividends paid by company on all shares outstanding for the period: ')
+    total_dividends_paid = error_check_accounting(total_dividends_paid)
+    company_debt = input('Enter total company debt outstanding: ')
+    company_debt = error_check_accounting(company_debt)
+    company_equity = input('Enter total shareholder equity: ')
+    company_equity = error_check_accounting(company_equity)
+    result = (net_company_income - total_dividends_paid) / (company_debt + company_equity)
+    print('The company return on capital is: ' + str('{:.1%}'.format(result)))
 
 
 def personal_cashflow():
