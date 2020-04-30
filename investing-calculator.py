@@ -22,18 +22,7 @@ def main():
     while continue_or_end != '0':
         continue_or_end = input('Enter 0 to exit or 1 for option selections: ')
         if continue_or_end == '1':
-            usr_input = input('''\nPlease enter a number to select from the following options:
-0 To end program
-1 Calculate your personal cash flow
-2 Calculate the amount of debt you are in vs income
-3 Calculate total return on an investment
-4 Calculate simple return on an investment
-5 Calculate compounding annual growth for an investment
-6 Calculate company earnings yield
-7 Calculate company return on capital
-8 Calculate inflation adjusted ROI
-9 Calculate gains or losses
-10 Calculate how long it will take for you to double your money on an investment\n''')
+            usr_input = text_for_options()
         elif continue_or_end == '0':
             sys.exit(0)
         else:
@@ -121,7 +110,7 @@ def personal_leverage_ratio():
     monthly_personal_income = error_check_accounting(monthly_personal_income)
     leverage_ratio = monthly_debt_payments / monthly_personal_income
     print('A common standard is that your debt ratio should be no more than 33% (.33) of your income. Yours is:',
-          leverage_ratio)
+          str('{:.1%}'.format(leverage_ratio)))
 
 
 def inflation_adjusted_roi():
@@ -165,21 +154,14 @@ def error_check(usr_input):
                 sys.exit(0)
             else:
                 print('ERROR: please enter a valid positive whole number 0 - 10')
-                usr_input = input(
-                    '''Please enter a number to select from the following options:'
-1 Calculate your personal cashflow
-2 Calculate the amount of debt you are in vs income
-3 Calculate total return on an investment
-4 Calculate simple return on an investment
-5 Calculate compounding annual growth for an investment
-6 Calculate company earnings yield
-7 Calculate company return on capital
-8 Calculate inflation adjusted ROI
-9 Calculate gains or losses
-10 Calculate how long it will take for you to double your money on an investment\n''')
+                usr_input = text_for_options()
         except ValueError:
             print('ERROR: please enter a valid positive whole number 0 - 10')
-            usr_input = input(
+            usr_input = text_for_options()
+    return usr_input
+
+def text_for_options():
+    usr_input = input(
                 '''Please enter a number to select from the following options:
 1 Calculate your personal cashflow
 2 Calculate the amount of debt you are in vs income
