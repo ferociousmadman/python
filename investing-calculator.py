@@ -3,12 +3,11 @@
 # Date: 4-21-20
 #
 # This program allows the user to do a variety of investment and
-# personal finance calculations. The formulae here are widely known,
-# however, the sources used are:
+# personal finance calculations in the console. The formulae here are widely
+# known, however, the sources used are:
 # https://www.bankrate.com/investing/6-financial-formulas-to-help-you-succeed/
 # https://www.thebalance.com/determine-return-on-investment-3140687
-# This first push will be revised in the future, so that the functions which
-# contain 'pass' are filled out. Commas are not recognized as valid delineators
+# Commas are not recognized as valid delineators
 # -----------------------------------------------------------------------------
 
 import sys
