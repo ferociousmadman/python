@@ -45,10 +45,11 @@ def main():
     con = error_handler(con)
     while con != 'N':
         first_num = input("Please enter first number for greatest common divisor calculation: ")
-        first_num =num_error_handler(first_num)
+        first_num = num_error_handler(first_num)
         second_num = input("Please enter second number for greatest common divisor calculation: ")
         second_num = num_error_handler(second_num)
         gcd(first_num, second_num)
+
 
 def error_handler(con):
     while con != 'Y' and con != 'N':
@@ -56,15 +57,17 @@ def error_handler(con):
         con = con.upper()
     return con
 
+
 def num_error_handler(num):
     while not num.isdigit():
         num = input('ERROR (must enter an integer): ')
-        if num.isdigit() and num.isdecimal():
-            num = float(num)
+        try:
+            num = int(num)
             break
-        else:
+        except ValueError:
             continue
-    return num
+    return int(num)
+
 
 main()
 
